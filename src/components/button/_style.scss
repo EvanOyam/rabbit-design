@@ -1,4 +1,6 @@
-.btn {
+$btn-prefix-cls: '#{$rabbit-prefix}-btn';
+
+.#{$btn-prefix-cls} {
   position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
@@ -9,12 +11,7 @@
   vertical-align: middle;
   background-image: none;
   border: $btn-border-width solid transparent;
-  @include button-size(
-    $btn-padding-y,
-    $btn-padding-x,
-    $btn-font-size,
-    $border-radius
-  );
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
   box-shadow: $btn-box-shadow;
   cursor: pointer;
   transition: $btn-transition;
@@ -29,7 +26,7 @@
   }
 }
 
-.btn-lg {
+.#{$btn-prefix-cls}-lg {
   @include button-size(
     $btn-padding-y-lg,
     $btn-padding-x-lg,
@@ -37,7 +34,7 @@
     $btn-border-radius-lg
   );
 }
-.btn-sm {
+.#{$btn-prefix-cls}-sm {
   @include button-size(
     $btn-padding-y-sm,
     $btn-padding-x-sm,
@@ -46,25 +43,18 @@
   );
 }
 
-.btn-primary {
+.#{$btn-prefix-cls}-primary {
   @include button-style($primary, $primary, $white);
 }
-.btn-danger {
+.#{$btn-prefix-cls}-danger {
   @include button-style($danger, $danger, $white);
 }
 
-.btn-default {
-  @include button-style(
-    $white,
-    $gray-400,
-    $body-color,
-    $white,
-    $primary,
-    $primary
-  );
+.#{$btn-prefix-cls}-default {
+  @include button-style($white, $gray-400, $body-color, $white, $primary, $primary);
 }
 
-.btn-link {
+.#{$btn-prefix-cls}-link {
   font-weight: $font-weight-normal;
   color: $btn-link-color;
   text-decoration: $link-decoration;

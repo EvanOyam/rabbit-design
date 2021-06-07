@@ -8,7 +8,7 @@ describe('Test button component', () => {
     const element = wrapper.getByText('Default') as HTMLButtonElement
     expect(element).toBeInTheDocument()
     expect(element.tagName).toBe('BUTTON')
-    expect(element).toHaveClass('btn btn-default')
+    expect(element).toHaveClass('rabbit-btn rabbit-btn-default')
     expect(element).toHaveTextContent(/^Default$/)
   })
 
@@ -22,7 +22,7 @@ describe('Test button component', () => {
     const element = wrapper.getByText('Primary') as HTMLButtonElement
     expect(element).toBeInTheDocument()
     expect(element.tagName).toBe('BUTTON')
-    expect(element).toHaveClass('btn btn-primary custom-class btn-lg')
+    expect(element).toHaveClass('rabbit-btn rabbit-btn-primary custom-class rabbit-btn-lg')
     expect(element).toHaveTextContent(/^Primary$/)
   })
 
@@ -35,7 +35,7 @@ describe('Test button component', () => {
     const element = wrapper.getByText('Link') as HTMLAnchorElement
     expect(element).toBeInTheDocument()
     expect(element.tagName).toBe('A')
-    expect(element).toHaveClass('btn btn-link')
+    expect(element).toHaveClass('rabbit-btn rabbit-btn-link')
     expect(element).toHaveTextContent(/^Link$/)
   })
 

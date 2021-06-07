@@ -1,5 +1,6 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
 import classNames from 'classnames'
+import { classPrefix } from '../../config/default.config'
 
 export type ButtonSize = 'lg' | 'sm'
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
@@ -21,9 +22,9 @@ export const Button: FC<ButtonProps> = (props) => {
   const { btnType, className, disabled, size, children, href, ...restProps } = props
 
   // "link" type need a special "disabled" class for <a>
-  const classes = classNames('btn', className, {
-    [`btn-${btnType}`]: btnType,
-    [`btn-${size}`]: size,
+  const classes = classNames(`${classPrefix}-btn`, className, {
+    [`${classPrefix}-btn-${btnType}`]: btnType,
+    [`${classPrefix}-btn-${size}`]: size,
     disabled: btnType === 'link' && disabled
   })
 
